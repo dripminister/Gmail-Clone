@@ -1,0 +1,264 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+}
+
+.app__flexContainer {
+  display: flex;
+}
+
+.login, .signup, .forgotPassword {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.login__card, .signup__card, .forgotPassword__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  width: 80%;
+  max-width: 300px;
+}
+
+.login__title, .signup__title, .forgotPassword__title {
+  margin-bottom: 10px;
+}
+
+.login__inputDiv > label, .signup__inputDiv > label, .forgotPassword__inputDiv > label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.login__inputDiv > input, .signup__inputDiv > input, .forgotPassword__inputDiv > input {
+  padding: 10px 20px;
+  border: none;
+  border-bottom: 1px solid gray;
+  background-color: #eee;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+.login__button, .signup__button, .forgotPassword__button {
+  width: 100%;
+  background-color: darkblue;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid lightgray;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.navbar > a {
+  text-decoration: none;
+}
+
+.navbar__logo {
+  color: black;
+}
+
+.navbar > form {
+  flex: 1;
+}
+
+.navbar > form > input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ddd;
+  outline: none;
+}
+
+.navbar > button {
+  padding: 10px 15px;
+  background-color: #ddd;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sidebar {
+  height: calc(100vh - 57.67px);
+  width: 200px;
+  border-right: 1px solid lightgray;
+}
+
+.sidebar > ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  padding-top: 20px;
+}
+
+.sidebar__compose {
+  background-color: rgb(134, 225, 255);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 15px;
+  border-radius: 15px;
+  margin-left: 7px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.sidebar__compose:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar > ul > a {
+  text-decoration: none;
+  color: black;
+  width: 100%;
+}
+
+.sidebar > ul > a > li {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  width: 90%;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  gap: 20px;
+}
+
+.sidebar > ul > a > li:hover {
+  background-color: rgb(134, 225, 255);
+}
+
+.sidebar__popUp {
+  height: 400px;
+  width: 400px;
+  position: fixed;
+  right: 50px;
+  bottom: 0;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  background-color: rgb(247, 211, 211);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  width: 100%;
+}
+
+.sidebar__Icon {
+  cursor: pointer;
+}
+
+.sidebar__popUp > form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar__popUp > form > input {
+  border: none;
+  width: 90%;
+  margin: 0 auto;
+  border-bottom: 1px solid lightgray;
+  outline: none;
+  padding: 10px 5px;
+}
+
+.sidebar__textarea {
+  resize: none;
+  width: 90%;
+  height: 240px;
+  border: none;
+  outline: none;
+}
+
+.sidebar__sendButton {
+  cursor: pointer;
+  background-color: rgb(2, 2, 196);
+  color: white;
+  border-radius: 50px;
+  align-self: flex-start;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 5px;
+  margin-left: 10px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.emailItem {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  padding: 0 10px;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid lightgray;
+  transition: transform 500ms ease;
+}
+
+.emailItem:hover{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transform: scaleY(1.03);
+}
+
+.inbox, .starred, .unread, .sent{
+  height: calc(100vh - 57.67px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow-y: scroll;
+}
+
+.emailDisplay {
+  padding: 10px 20px;
+  width: 100%;
+  overflow-y: scroll;
+  height: calc(100vh - 57.67px);
+}
+
+.emailDisplay__Icon {
+  cursor: pointer;
+}
+
+.emailDisplay__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+}
