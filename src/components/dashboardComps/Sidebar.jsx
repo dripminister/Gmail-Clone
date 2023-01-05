@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import InboxIcon from "@mui/icons-material/Inbox"
 import StarBorderIcon from "@mui/icons-material/StarBorder"
 import SendIcon from "@mui/icons-material/Send"
@@ -11,6 +11,7 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore"
 import { db } from "../../firebase"
 
 export default function Sidebar() {
+	const location = useLocation()
 	const [open, setOpen] = useState(false)
 	const { currentUser } = useAuth()
 	const [title, setTitle] = useState("")
@@ -45,6 +46,10 @@ export default function Sidebar() {
 		setOpen(false)
 	}
 
+	const matchPath = (route) => {
+		if(route === location.pathname) return true
+	}
+
 	return (
 		<div className="sidebar">
 			<ul>
@@ -55,22 +60,22 @@ export default function Sidebar() {
 					<EditIcon /> Compose
 				</li>
 				<Link to="/">
-					<li>
+					<li className={`${matchPath("/") && "sidebar__active"}`}>
 						<InboxIcon /> Inbox
 					</li>
 				</Link>
 				<Link to="/unread">
-					<li>
+					<li className={`${matchPath("/unread") && "sidebar__active"}`}>
 						<MarkunreadIcon /> Unread
 					</li>
 				</Link>
 				<Link to="/starred">
-					<li>
+					<li className={`${matchPath("/starred") && "sidebar__active"}`}>
 						<StarBorderIcon /> Starred
 					</li>
 				</Link>
 				<Link to="/sent">
-					<li>
+					<li className={`${matchPath("/sent") && "sidebar__active"}`}>
 						<SendIcon /> Sent
 					</li>
 				</Link>
@@ -111,3 +116,4 @@ export default function Sidebar() {
 		</div>
 	)
 }
+
