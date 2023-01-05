@@ -153,6 +153,10 @@
   background-color: rgb(134, 225, 255);
 }
 
+.sidebar__active {
+  background-color: rgb(134, 225, 255);
+}
+
 .sidebar__popUp {
   height: 400px;
   width: 400px;
